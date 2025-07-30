@@ -1,6 +1,6 @@
 <div>
   <button>
-    <img src="" alt="">
-    <span>NAME</span>
+    <img [src]="'./users/' + user.avatar" [alt]="user.name + ' photo'">
+    <span>{{ user.name }}</span>
   </button>
 </div>
