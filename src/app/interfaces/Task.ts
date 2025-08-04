@@ -5,3 +5,9 @@ export type TTask = {
     summary: string;
     dueDate: string;
 }
+
+export type TNewTask = {
+  title: string;
+  summary: string;
+  date: string;
+}

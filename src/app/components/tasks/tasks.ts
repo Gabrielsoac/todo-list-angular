@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { type TUser } from '../../interfaces/User';
 import { Task } from "../task/task";
 import { NewTask } from "../new-task/new-task";
+import { type TNewTask } from '../../interfaces/Task';
 
 @Component({
   selector: 'app-tasks',
@@ -57,5 +58,22 @@ export class Tasks {
 
   cancelAddTask() {
     this.isAddingTask = false;
+  }
+
+  addNewTask(taskData: TNewTask){
+    if(this.selectedUser){
+      this.tasks.unshift(
+        {
+          id: `t${this.tasks.length + 2}`,
+          title: taskData.title,
+          summary: taskData.summary,
+          dueDate: taskData.date,
+          userId: this.selectedUser.id
+        }
+      );
+
+      this.isAddingTask = false;
+    }
+    throw new Error('User not defined');
   }
 }

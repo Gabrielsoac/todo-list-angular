@@ -1,4 +1,4 @@
-@if (isAddingTask) { <app-new-task (cancelAddingTask)="cancelAddTask()" /> }
+@if (isAddingTask) { <app-new-task (cancelAddingTask)="cancelAddTask()" (addTask)="addNewTask($event)" /> }
 <section id="tasks">
   <header>
     <h2> {{ selectedUser?.name }}'s Tasks</h2>
