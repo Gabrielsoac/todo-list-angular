@@ -16,10 +16,10 @@ import { TUser } from './interfaces/User';
 export class App {
   protected readonly title = signal('easy-track');
   users: Array<TUser> = DUMMY_USERS;
-  selectedUser!: TUser | undefined;
+  selectedUser!: TUser;
 
   selectUser(id: string) {
     const data = this.users.find((user) => user.id === id);
-    this.selectedUser = data;
+    if(data) this.selectedUser = data;
   }
 }
